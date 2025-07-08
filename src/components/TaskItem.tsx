@@ -1,27 +1,23 @@
 import React from 'react'
 import styles from './TaskItem.module.css'
-
-type TaskItemProps = {
-  id: string
-  title: string
-  completed: boolean
-  onToggle?: () => void
-  onDelete?: () => void
-}
+import type { TaskItemProps } from '../types/tasktypes'
 
 export const TaskItem: React.FC<TaskItemProps> = ({
+  id,
   title,
   completed,
   onToggle,
 }) => {
   return (
-    <div className={styles.taskitem}>
-      <label>
+    <div className={styles.taskitem} onClick={onToggle}>
+      <label htmlFor={`task-checkbox-${id}`}>
         <input
+          id={`task-checkbox-${id}`}
           type="checkbox"
           checked={completed}
           onChange={onToggle}
           className={styles.taskitemButton}
+          aria-checked={completed}
         />
         <span className={completed ? 'taskitem-completed' : ''}>
           {title}
