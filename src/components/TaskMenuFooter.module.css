@@ -36,3 +36,9 @@
   font-weight: 650;
   box-shadow: 0 0 3px #ddd;
 }
+
+@media (max-width: 500px) {
+.footer {
+  flex-direction: column;
+}
+}

@@ -26,3 +26,25 @@
 .addButton:hover {
   background-color: #007bff;
 }
+
+@media (max-width: 550px) {
+  .header {
+    flex-direction: column;
+  }
+  .addButton{
+    width: 65%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 300px) {
+  .input{
+    width: 100%;
+    word-wrap: break-word;
+        overflow-x: scroll;
+    padding: 0;
+  }
+  .addButton{
+    width: 100%;
+  }
+}

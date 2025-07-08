@@ -12,12 +12,13 @@
   flex-direction: column;
   justify-content: center;
   justify-self: center;
-  width: 50%;
+  width: clamp(50%, 75vw, 100%);
   background-color: white;
   color: black;
   border-radius: 2px;
   box-shadow: 2px 2px 5px grey;
   box-sizing: border-box;
+  transition: 0.5s;
 }
 
 .app-divider {
