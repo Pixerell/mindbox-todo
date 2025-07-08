@@ -10,7 +10,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 h1 {
   font-size: 3.2rem;
   line-height: 1.1;
@@ -33,4 +32,3 @@ button {
 button:hover {
   transform: scale(1.1);
 }
-

@@ -15,8 +15,8 @@
 }
 
 .addButton {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
   height: 1.5rem;
   background-color: #242424;
   color: white;
@@ -26,4 +26,3 @@
 .addButton:hover {
   background-color: #007bff;
 }
-

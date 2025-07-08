@@ -1,20 +1,21 @@
-import React from 'react'
-import styles from './TaskMenuFooter.module.css'
-import type { TaskMenuFooterProps } from '../types/componentprops'
-import { CLEAR_COMPLETED, FILTERS, SET_FILTER } from '../types/actiontypes'
-import type { Filter } from '../types/tasktypes'
+import React from 'react';
+import styles from './TaskMenuFooter.module.css';
+import type { TaskMenuFooterProps } from '../types/componentprops';
+import { CLEAR_COMPLETED, FILTERS, SET_FILTER } from '../types/actiontypes';
+import type { Filter } from '../types/tasktypes';
 
 export const TaskMenuFooter: React.FC<TaskMenuFooterProps> = ({
   dispatch,
   activeCount,
   currentFilter,
 }) => {
+  const filters = Object.values(FILTERS) as Filter[];
 
-  const filters = Object.values(FILTERS) as Filter[]
-  
   return (
     <div className={styles.footer}>
-            <span>{activeCount} item{activeCount !== 1 ? 's' : ''} left</span>
+      <span>
+        {activeCount} item{activeCount !== 1 ? 's' : ''} left
+      </span>
       <div className={styles.filters}>
         {filters.map((filter) => (
           <button
@@ -26,10 +27,9 @@ export const TaskMenuFooter: React.FC<TaskMenuFooterProps> = ({
           </button>
         ))}
       </div>
-      <button 
-      className={styles.clearButton}
-      onClick={() => dispatch({ type: CLEAR_COMPLETED })}
-      >Clear completed</button>
+      <button className={styles.clearButton} onClick={() => dispatch({ type: CLEAR_COMPLETED })}>
+        Clear completed
+      </button>
     </div>
-  )
-}
+  );
+};

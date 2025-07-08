@@ -1,10 +1,11 @@
-import type { FILTERS } from "./actiontypes"
+import type { FILTERS } from './actiontypes';
 
 export type TaskItemProps = {
-  id: number
-  title: string
-  completed: boolean
-  onToggle?: () => void
-}
+  id: number;
+  title: string;
+  completed: boolean;
+  special?: boolean;
+  onToggle?: () => void;
+};
 
-export type Filter = typeof FILTERS[keyof typeof FILTERS]
+export type Filter = (typeof FILTERS)[keyof typeof FILTERS];

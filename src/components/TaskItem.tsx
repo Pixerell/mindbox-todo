@@ -1,15 +1,13 @@
-import React from 'react'
-import styles from './TaskItem.module.css'
-import type { TaskItemProps } from '../types/tasktypes'
+import React from 'react';
+import styles from './TaskItem.module.css';
+import type { TaskItemProps } from '../types/tasktypes';
 
-export const TaskItem: React.FC<TaskItemProps> = ({
-  id,
-  title,
-  completed,
-  onToggle,
-}) => {
+export const TaskItem: React.FC<TaskItemProps> = ({ id, title, completed, special, onToggle }) => {
   return (
-    <div className={styles.taskitem} onClick={onToggle}>
+    <div
+      className={`${styles.taskitem} ${special ? styles.taskitemSpecial : ''}`}
+      onClick={onToggle}
+    >
       <label htmlFor={`task-checkbox-${id}`}>
         <input
           id={`task-checkbox-${id}`}
@@ -19,10 +17,8 @@ export const TaskItem: React.FC<TaskItemProps> = ({
           className={styles.taskitemButton}
           aria-checked={completed}
         />
-        <span className={completed ? 'taskitem-completed' : ''}>
-          {title}
-        </span>
+        <span className={`${completed ? 'taskitem-completed' : ''}`}>{title}</span>
       </label>
     </div>
-  )
-}
+  );
+};
